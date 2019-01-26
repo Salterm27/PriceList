@@ -4,7 +4,6 @@ import requests
 URL = "https://api.mercadolibre.com/"
 withNick="sites/MLA/search?nickname="
 Nick="candy-ho"
-req=  URL+withNick+Nick 
-print(req)
-test= requests.get(req)
-print(test)
+req=  URL+withNick+Nick #forms the API endpoint
+test= requests.get(req) #test is a requests.model.response. The JSON is in the text field
+data= json.loads(test.text) #parses the response.text
